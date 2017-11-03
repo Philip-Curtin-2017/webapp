@@ -1,0 +1,27 @@
+<!-- extend from craterbase layout -->
+{% extends "base.html" %}
+
+{% block content %}
+  <h1>Practice Finished</h1>
+<br>
+
+Correct, that crater was re-centered correctly.<br>
+<br>
+You should now be ready to begin evaluating real crater predictions.<br>
+If you would like to go through the training and practice sections again,<br>
+click the "Go Back" button. Otherwise, please continue and start voting.<br>
+Every little bit helps, thank you!<br>
+<br>
+    <div class="container">
+      <form action"." method="post" >
+        <input type="submit" name="selection" value="Go_Back"><br><br>
+        Press the button to start evaluating craters.<br>
+        By pressing the start button, you are providing your consent to participate in this research.<br>
+        <input type="submit" name="selection" value="Start"><br>
+      </form>
+    </div>
+<br>
+
+
+{% endblock %}
+

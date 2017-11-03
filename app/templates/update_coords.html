@@ -1,0 +1,79 @@
+<!-- extend from craterbase layout -->
+{% extends "craterbase.html" %}
+
+{% block content %}
+  <h1></h1>
+
+
+
+    <div class="container">
+      <form action"." method="post" >
+        Please Click in the center of the crater.<br>
+        <input type="submit" name="jquery_finished" value="Cancel"><br>
+        <input type="hidden" name="numID" value="{{item.id}}">
+        <input type="hidden" name="recenter_status" value="cancel">
+      </form>
+    </div>
+<!-- Javascript code to make the image clickable and return click coordinates, 14 pixel offset from bottom-->
+<!-- alert code segment removed from javascript, reinsert beneath variables to get popup window on click-->
+<!--  alert(relativeX+':'+relativeY); -->
+    <script type=text/javascript>
+      $(document).ready(function() {
+        $("#update_coords_image").click(function(e) {
+
+          var offset = $(this).offset();
+          var relativeX = Math.floor(e.pageX - offset.left);
+          var relativeY = Math.floor(offset.top - e.pageY + 14);
+          
+          setTimeout("Conversion()",3000000);
+          $("#relX").val(relativeX);
+
+          $("#relY").val(relativeY);
+          
+          $( '#jquery_click_data').submit();
+        });
+      });
+
+    </script>
+
+    <div class="container">
+      <div class="main">
+        <form action="/update_coords" method="post" name="jquery_click_data" id="jquery_click_data">
+          <input type=hidden id="relX" name="relX" value="">
+          <input type=hidden id="relY" name="relY" value="">
+          <input type="hidden" name="numID" value="{{item.id}}">
+          <input type="hidden" name="recenter_status" value="submit">
+        </form>
+      </div>
+    </div>
+
+
+
+    <div>
+      <div class="position"></div><br>
+      <div>
+        <a id="update_coords_image">
+          <img class="demo-box"  id="picture_to_evaluate">
+        </a>
+      </div>
+    </div>
+<br/>
+
+    <div>
+           Zoom:{{ attributes.zoom }}<br>
+           X val:{{ attributes.x_val }}<br>
+           Y val{{ attributes.y_val }}<br>
+           Width:{{ attributes.width }}<br>
+           Height:{{ attributes.height }}<br><br>
+
+           Image name:{{ item.image }}<br>
+           ID:{{ item.id }}<br>
+
+
+
+    </div><br>
+
+{% endblock %}
+
+           
+

@@ -1,0 +1,41 @@
+<!-- extend from craterbase layout -->
+{% extends "craterbase.html" %}
+
+{% block content %}
+
+  <h1>WARNING: This page is only meant for professional use.<br>
+  Do not make a selection unless you are sure of your answer.<br><br></h1>
+  <div data-role="page" data-url="{{ url_for('update_confirm') }}">
+    <div class="container">
+      <form action"." method="post" >
+        Is the crater centered?<br>
+        <input type="radio" name="selection" value="Confirm"> Confirm<br>
+        <input type="radio" name="selection" value="Re-Center"> Re-Center<br>
+        <input type="radio" name="selection" value="Cancel"> Cancel<br>
+        <input type="submit">
+        <input type="hidden" name="numID" value="{{item.id}}"><br>
+        <input type="hidden" name="x1" value="{{attributes.x1}}">
+        <input type="hidden" name="x2" value="{{attributes.x2}}">
+        <input type="hidden" name="y1" value="{{attributes.y1}}">
+        <input type="hidden" name="y2" value="{{attributes.y2}}">
+      </form>
+    </div>
+
+<img id="picture_to_evaluate">
+<img id="picture_to_evaluate" src="{{ url_for('static', filename='crater_outline.png')}}">
+    <div>  Prediction Status: {{attributes.vote_result}}<br>
+           Zoom:{{ attributes.zoom }}<br>
+           X val:{{ attributes.x_val }}<br>
+           Y val:{{ attributes.y_val }}<br>
+           Width:{{ attributes.width }}<br>
+
+           Image name:{{ item.image }}<br>
+           ID:{{ item.id }}<br>
+           Certainty:{{ item.score  }}<br>
+           
+
+    </div><br>
+  </div>
+
+{% endblock %}
+

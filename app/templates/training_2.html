@@ -1,0 +1,31 @@
+<!-- extend from craterbase layout -->
+{% extends "base.html" %}
+
+{% block content %}
+  <h1>Expected Crater Size</h1>
+<br>
+Each image has been re-sized to make the craters close to the same size. <br>
+The three images are shown below with green and red sections.<br>
+The green section is the approximate size and location of the crater rim.<br>
+You can see that the rims of the three craters are all inside the green area.<br>
+<br>
+
+<img src="{{url_for('static',filename='training_images/training1.png')}}"> 
+<img src="{{url_for('static',filename='training_images/training1Outline.png')}}"> <br>
+
+<img src="{{url_for('static',filename='training_images/training2.png')}}"> 
+<img src="{{url_for('static',filename='training_images/training2Outline.png')}}"><br>
+
+<img src="{{url_for('static',filename='training_images/training3.png')}}">
+<img src="{{url_for('static',filename='training_images/training3Outline.png')}}"><br>
+<br>
+    <div class="container">
+      <form action"." method="post" >
+        Press the button to continue<br>
+        <input type="submit" name="selection" value="Continue"><br>
+      </form>
+    </div>
+
+
+{% endblock %}
+

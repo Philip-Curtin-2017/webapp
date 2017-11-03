@@ -1,0 +1,33 @@
+<!-- extend from craterbase layout -->
+{% extends "base.html" %}
+
+{% block content %}
+  <h1>Practice</h1>
+<br>
+
+Correct, that crater needs to be re-centered.<br>
+For simplification, we skipped the part where you click the center of the crater.<br>
+<br>
+If the crater is centered, click "Confirm".<br>
+If the crater needs to be re-centered again, click "Re-center".<br>
+If the image doesn't actually have a crater, click "Cancel" to return to the previous screen.<br><br>
+As a hint, only the correct button will allow you to progress to the next page.<br>
+<br>
+    <div class="container">
+      <form action"." method="post" >
+        Is this a crater?<br>
+        <input type="submit" name="selection" value="Confirm"><br>
+      </form>
+        <input type="submit" name="selection" value="Re-Center"><br>
+        <input type="submit" name="selection" value="Cancel"><br>
+      
+    </div>
+<br>
+<img src="{{url_for('static',filename='training_images/trainingRecenter2.png')}}"> 
+<img src="{{url_for('static',filename='training_images/trainingRecenter2Outline.png')}}"> 
+<br>
+
+
+
+{% endblock %}
+

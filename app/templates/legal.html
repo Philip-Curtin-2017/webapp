@@ -1,0 +1,23 @@
+<!-- extend from craterbase layout -->
+{% extends "base.html" %}
+
+{% block content %}
+  <h1>Legal Document - Participant Information Form</h1>
+<br>
+For a PDF copy of these forms, send an email with the heading "PIF Request",<br>
+to my email address, Philip.Long@student.curtin.edu.au.<br>
+
+<img src="{{url_for('static',filename='training_images/PIF1.png')}}"><br> 
+<img src="{{url_for('static',filename='training_images/PIF2.png')}}"><br> 
+<img src="{{url_for('static',filename='training_images/PIF3.png')}}"><br>
+
+    <div class="container">
+      <form action"." method="post" >
+        Continue to the training section<br>
+        <input type="submit" name="selection" value="Continue"><br>
+      </form>
+    </div>
+
+
+{% endblock %}
+

@@ -1,0 +1,38 @@
+<!-- extend from craterbase layout -->
+{% extends "craterbase.html" %}
+
+{% block content %}
+  <h1></h1>
+
+    <div class="container">
+      <form action"." method="post" >
+        Is this a crater?<br>
+        <input type="submit" name="selection" value="Yes"><br>
+        <input type="submit" name="selection" value="No"><br>
+        <input type="submit" name="selection" value="Unsure"><br>
+        <input type="submit" name="selection" value="Re-Center"><br>
+        <input type="hidden" name="numID" value="{{item.id}}"><br>
+      </form>
+    </div>
+
+<img id="picture_to_evaluate">
+<img id="picture_to_evaluate" src="{{ url_for('static', filename='crater_outline.png')}}"><br><br>
+Reminder: Prolonged sitting and computer use may have adverse health effects, please moderate your computer time.
+
+
+    <div>
+           Zoom:{{ attributes.zoom }}<br>
+           X val:{{ attributes.x_val }}<br>
+           Y val:{{ attributes.y_val }}<br>
+           Width:{{ attributes.width }}<br>
+
+           Image name:{{ item.image }}<br>
+           ID:{{ item.id }}<br>
+           Certainty:{{ item.score  }}<br>
+           
+
+    </div><br>
+
+
+{% endblock %}
+

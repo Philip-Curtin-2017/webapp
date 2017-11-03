@@ -1,0 +1,54 @@
+<!-- extend from base layout -->
+{% extends "base.html" %}
+
+{% block content %}
+
+<h1>Background Information on this project</h1>
+<br><br>
+Hello, my name is Philip Long, and I am an undergraduate Engineering student at Curtin University in Perth, Western Australia. <br>
+This website is intended to help me process data for part of my final year thesis project.<br><br>
+
+As background information, crater counting is the best way for geologists to estimate the age of the surface of Mars because they are not able to get samples for laboratory tests.<br>
+Unfortunately, there are too many craters for experts to manually count. <br>
+An automated Crater Detection Algorithm was developed by another student at Curtin to identify craters in satellite images of Mars. <br>
+The algorithm was tested by comparing the algorithms predictions against a data set of craters that were manually identified by experts. <br>
+The experts data set is very large, but does not include craters less than 1 km in diameter and may have missed other craters. <br>
+The algorithm sometimes correctly predicts a crater, but the prediction is marked as being wrong because the crater was not included in the experts data set. <br><br>
+
+Part of my project involves looking at the algorithm predictions that were marked as being wrong to see if they are actually wrong, or if they are craters that were not included in the experts data set. <br>
+Examining the predictions will help determine the accuracy of the algorithm as it is today, and can be used to improve the algorithm at a later date. <br>
+The accuracy of the algorithm is important because reliable crater counts can be used by geologists that are studying the surface of Mars.
+<br><br>
+
+You are being asked to help with identifying craters because there are too many predictions for me to evaluate on my own.<br>
+Your time and help with this process will be greatly appreciated. There is no cost for you to participate and the only benefit will be my gratitude.<br>
+If you choose to participate, you will be shown a small image which was identified by the algorithm as containing a crater.<br> 
+The crater should take up most of the space in the image and be centered in the image. <br><br>
+
+Once you start, each image will have the question “Is this a crater?”, and you will have three choices, “Yes”, “No”, or “Re-Center”. <br>
+Just use your best judgement to select yes or no, and if there is an off-center crater, just select the “Re-Center” option and click on the image in the center of the crater to align the image correctly. <br>
+That’s all there is to it! You can evaluate as many or as few as you like.<br><br>
+
+After the craters have been evaluated, the data (yes/no/re-center responses) will be used for my final thesis, <br>
+and a copy will be kept indefinitely on the Curtin University Research drive in case it can be useful for future research projects. <br>
+No personal information will be collected or requested from you. <br><br>
+
+This research is part of the ongoing “Mars Crater Detection Algorithm” project, in conjunction with the Desert Fireball Network, <br>
+under the supervision of Dr. Jonathan Paxman, Head of the Mechatronics Engineering department at Curtin University.<br><br>
+
+Curtin University Human Research Ethics Committee (HREC) has approved this study (HREC number HRE2017-0618). <br>
+Should you wish to discuss the study with someone not directly involved, in particular, any matters concerning the conduct of the study or your rights as a participant, <br>
+or you wish to make a confidential complaint, you may contact the Ethics Officer on (08) 9266 9223 or the Manager, Research Integrity on (08) 9266 7093 or email hrec@curtin.edu.au.<br>
+<div>
+<img src="{{url_for('static',filename='training_images/curtin_logo.png')}}"> 
+</div>
+    <div class="container">
+      <form action"." method="post" >
+        Press the button to continue to the training section<br>
+        <input type="submit" name="selection" value="Continue"><br>
+      </form>
+    </div>
+
+
+{% endblock %}
+

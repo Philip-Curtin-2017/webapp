@@ -1,0 +1,24 @@
+<!-- extend from craterbase layout -->
+{% extends "base.html" %}
+
+{% block content %}
+  <h1>Examples of False Craters</h1>
+<br>
+This is an example of a FALSE crater prediction.<br>
+The image does have a crater, but the crater is not the expected size.<br>
+If the crater is smaller or larger than the green circle, it should not be counted as a true crater.<br>
+<br>
+<img src="{{url_for('static',filename='training_images/trainingF3.png')}}"> 
+<img src="{{url_for('static',filename='training_images/trainingF3Outline.png')}}"> 
+<br>
+
+    <div class="container">
+      <form action"." method="post" >
+        Press the button to continue<br>
+        <input type="submit" name="selection" value="Continue"><br>
+      </form>
+    </div>
+
+
+{% endblock %}
+

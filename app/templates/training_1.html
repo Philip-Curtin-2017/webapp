@@ -1,0 +1,26 @@
+<!-- extend from craterbase layout -->
+{% extends "base.html" %}
+
+{% block content %}
+  <h1>Example Craters</h1>
+<br>
+These are three examples of craters on Mars.<br>
+The first crater is relatively young and has a clear rim.<br>
+The second crater is older, so its rim has been warn away.<br>
+The third crater is smaller than the other two so the image has less resolution.<br>
+Most of the craters you will see here will look like the third example.<br><br>
+
+<img src="{{url_for('static',filename='training_images/training1.png')}}"> 
+<img src="{{url_for('static',filename='training_images/training2.png')}}"> 
+<img src="{{url_for('static',filename='training_images/training3.png')}}">
+
+    <div class="container">
+      <form action"." method="post" >
+        Press the button to continue<br>
+        <input type="submit" name="selection" value="Continue"><br>
+      </form>
+    </div>
+
+
+{% endblock %}
+

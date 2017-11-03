@@ -1,0 +1,48 @@
+<html>
+  <head>
+    {% if title %}
+    <title>{{ title }} – craterbase title</title>
+    {% else %}
+    <title>base title default</title>
+    {% endif %}
+
+
+
+    <style type="text/css">
+
+     #navlist{position: relative;}
+
+     #picture_to_evaluate {
+        width: {{attributes.width}}px;
+        height: {{attributes.height}}px;
+        background: url("static/{{item.image}}") -{{attributes.x_val}}px -{{attributes.y_val}}px;
+        zoom: {{attributes.zoom}};
+      }
+
+      #picture_original {
+        width: {{attributes.width_original}}px;
+        height: {{attributes.width_original}}px;
+        background: url("static/{{item.image}}") -{{attributes.x1}}px -{{attributes.y1}}px;
+      }
+    </style>
+
+    <script type= text/javascript src="{{ url_for('static', filename='jquery.js') }}"></script>
+
+  </head>
+
+
+
+
+  <body>
+
+    <div>Home: <a href="/index">Home</a></div>
+    <div>Why this is important: <a href="/history">Background</a></div>
+    <div>What am I looking for?: <a href="/training_1">Training</a></div>
+    <div>What should I do?: <a href="/training_6">Practice</a></div>
+    <hr>
+    {% block content %}{% endblock %}
+  </body>
+</html>
+
+
+

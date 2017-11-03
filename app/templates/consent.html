@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+  {% block content %}
+  <h1>Electronic Consent</h1>
+  <br><br>
+  For legal purposes, you must provide consent to begin.<br>
+  <br>
+  By selecting "Agree" below and clicking start, you are stating that:<br>
+    - You have read and understood the information and traning material on this site.<br>
+    - You voluntarily agree to participate.<br>
+    - You are of legal age in your region to provide consent, or<br>
+    - You have obtained permission from your parent or guardian to participate.<br>
+    <div class="container"><br>
+        <form action"." method="post" >
+            
+            <input type="radio" name="consent" id="Yes" value="Yes"> Agree </input><br>
+            <input type="radio" name="consent" id="No" value="No"> Disagree </input><br>
+
+            <input type="submit" name="selection" value="Start"><br>
+        </form>
+    </div>
+{% endblock %}
+

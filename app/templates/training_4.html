@@ -1,0 +1,28 @@
+<!-- extend from craterbase layout -->
+{% extends "base.html" %}
+
+{% block content %}
+  <h1>Examples of False Craters</h1>
+<br>
+This is another example of a FALSE crater prediction.<br>
+Sometimes, geographic formations can look similar to craters up close.<br>
+<br>
+This image almost looks like a crater. Below is a wider view of the geographic formation.<br>
+
+
+
+<br>
+<img src="{{url_for('static',filename='training_images/trainingF2.png')}}"> 
+<img src="{{url_for('static',filename='training_images/trainingF2Outline.png')}}"> 
+<br>
+<img src="{{url_for('static',filename='training_images/trainingF1.png')}}"> 
+    <div class="container">
+      <form action"." method="post" >
+        Press the button to continue<br>
+        <input type="submit" name="selection" value="Continue"><br>
+      </form>
+    </div>
+
+
+{% endblock %}
+

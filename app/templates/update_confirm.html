@@ -1,0 +1,40 @@
+<!-- extend from craterbase layout -->
+{% extends "craterbase.html" %}
+
+{% block content %}
+
+  <h1></h1>
+  <div data-role="page" data-url="{{ url_for('update_confirm') }}">
+    <div class="container">
+      <form action"." method="post" >
+        Is the crater centered?<br>
+        <input type="submit" name="selection" value="Confirm"><br>
+        <input type="submit" name="selection" value="Re-Center"><br>
+        <input type="submit" name="selection" value="Cancel"><br>
+        <input type="hidden" name="numID" value="{{item.id}}"><br>
+        <input type="hidden" name="x1" value="{{attributes.x1}}">
+        <input type="hidden" name="x2" value="{{attributes.x2}}">
+        <input type="hidden" name="y1" value="{{attributes.y1}}">
+        <input type="hidden" name="y2" value="{{attributes.y2}}">
+      </form>
+    </div>
+
+<img id="picture_to_evaluate">
+<img id="picture_to_evaluate" src="{{ url_for('static', filename='crater_outline.png')}}">
+<img id="picture_original"><br><br>
+    <div>
+           Zoom:{{ attributes.zoom }}<br>
+           X val:{{ attributes.x_val }}<br>
+           Y val:{{ attributes.y_val }}<br>
+           Width:{{ attributes.width }}<br>
+
+           Image name:{{ item.image }}<br>
+           ID:{{ item.id }}<br>
+           Certainty:{{ item.score  }}<br>
+           
+
+    </div><br>
+  </div>
+
+{% endblock %}
+

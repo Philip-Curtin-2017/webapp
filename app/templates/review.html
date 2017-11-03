@@ -1,0 +1,32 @@
+<!-- extend from base layout -->
+{% extends "base.html" %}
+
+{% block content %}
+  <h1>WARNING: This page is only meant for professional use.<br>
+  Do not make a selection unless you are sure of your answer.<br><br></h1>
+
+
+<br><br>This section of the website is only meant to be used by professional geologists so this page has no direct link.<br>
+If you found this page by accident, please follow one of the lins above to navigate to regular crater evaluation.<br>
+<br>
+If you are authorized to use this section of the website, please use your best judgement when evaluating craters.<br>
+The normal evaluation process uses a majority vote to assign a value to each crater prediction.<br>
+However, this section uses just ONE vote to assign a value to a crater prediction, so making an accidental selection<br>
+in this section will have larger ramifications than in the normal voting process.<br>
+<br>
+
+    <div class="container">
+      <form action"." method="post" >
+      Press Crater_Lookup to review craters, or use enter the password to modify results.
+        <input type="submit" name="selection" value ="Crater_Lookup"><br>
+        Please enter the password to continue.<br>
+        <input type="text" name="text"><br>
+        <input type="submit" name="selection" value="Modify_Results"><br>
+        
+      </form>
+    </div>
+
+
+
+
+{% endblock %}

@@ -1,0 +1,28 @@
+<!-- extend from craterbase layout -->
+{% extends "base.html" %}
+
+{% block content %}
+  <h1>Practice</h1>
+
+The next few pages are just some very simple practice images, they may look familiar.<br>
+As a hint, only the correct button will allow you to progress to the next page.<br><br>
+
+
+    <div class="container">
+      <form action"." method="post" >
+        Is this a crater?<br>
+        <input type="submit" name="selection" value="Yes"><br>
+      </form>
+        <input type="submit" name="selection" value="No"><br>
+        <input type="submit" name="selection" value="Unsure"><br>
+        <input type="submit" name="selection" value="Re-Center"><br>
+
+    </div>
+<img src="{{url_for('static',filename='training_images/training3.png')}}"> 
+<img src="{{url_for('static',filename='training_images/training3Outline.png')}}"> 
+<br>
+
+
+
+{% endblock %}
+

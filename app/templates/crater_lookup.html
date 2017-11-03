@@ -1,0 +1,42 @@
+<!-- extend from craterbase layout -->
+{% extends "craterbase.html" %}
+
+{% block content %}
+  <h1><br><br></h1>
+
+    <div class="container">
+      <form action"." method="post" >
+        Enter crater ID for review.<br>
+        <input type="text" name = "craterID">
+        <input type="hidden" name="numID" value="{{item.id}}"><br><br>
+        <input type="submit" name="selection" value ="Crater_Lookup"><br>
+        <input type="submit" name="selection" value ="Review"><br>
+      </form>
+    </div>
+
+<img id="picture_to_evaluate">
+<img id="picture_to_evaluate" src="{{ url_for('static', filename='crater_outline.png')}}">
+<img id="picture_original"><br><br>
+
+
+    <div>
+           Prediction Status: {{attributes.vote_result}}<br>
+           Zoom:{{ attributes.zoom }}<br>
+           X val:{{ attributes.x_val }}<br>
+           Y val:{{ attributes.y_val }}<br>
+           Width:{{ attributes.width }}<br>
+
+           Image name:{{ item.image }}<br>
+           ID:{{ item.id }}<br>
+           Certainty:{{ item.score  }}<br>
+           Craters for Review:<br>
+           {% for review_crater in craters_for_review %}
+           <p>{{review_crater}}</p>
+           {%endfor%}
+           
+
+    </div><br>
+
+
+{% endblock %}
+

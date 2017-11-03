@@ -1,0 +1,41 @@
+<!-- extend from craterbase layout -->
+{% extends "base.html" %}
+
+{% block content %}
+  <h1>Example of an Off-Center Crater</h1>
+<br>
+Sometimes the image will have a crater that is the correct size, but in the wrong place.
+The image below is an example of an off-center crater.
+<div>
+    <br>
+    <img src="{{url_for('static',filename='training_images/trainingRecenter1.png')}}"> 
+    <img src="{{url_for('static',filename='training_images/trainingRecenter1Outline.png')}}"> 
+    <br>
+</div><br>
+There are three simple steps for re-centering a crater:<br>
+    1. Click the "Re-Center" button.<br> 
+    2. Click in the center of the crater<br>
+    3. If the crater is now centered, click "Confirm", otherwise click "Re-center" to try again or "Cancel" to return to the main screen.<br>
+<br>
+Below is an image of the same crater, properly centered.<br>
+
+
+
+
+<div>
+    <br>
+    <img src="{{url_for('static',filename='training_images/trainingRecenter2.png')}}"> 
+    <img src="{{url_for('static',filename='training_images/trainingRecenter2Outline.png')}}"> 
+    <br>
+</div>
+<div class="container">
+  <form action"." method="post" >
+    Press the button to continue<br>
+    <input type="submit" name="selection" value="Continue"><br>
+  </form>
+</div>
+<br><br>
+
+
+{% endblock %}
+
